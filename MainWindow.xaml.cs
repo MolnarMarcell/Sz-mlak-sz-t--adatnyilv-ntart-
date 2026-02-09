@@ -27,5 +27,15 @@ namespace Számlakészítő_adatnyilvántartó
         {
 
         }
+
+        private void Hozzáadás_gomb_Click(object sender, RoutedEventArgs e)
+        {
+            int ID = Termékek.Count() + 1;
+            string Név = TermékNév_TextBox.Text;
+            string Kategória = Kategória_ComboBox.Text;
+            int Ár = int.Parse(Ár_TextBox.Text);
+            Termek_osztaly termék = new Termek_osztaly(ID, Név, Kategória, Ár, 0);
+            Termékek.Add(termék);
+        }
     }
 }

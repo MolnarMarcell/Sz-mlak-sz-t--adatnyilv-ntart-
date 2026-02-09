@@ -2,8 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Főablak - Adatnyilvántartó"
-        Height="420"
-        Width="900"
+        Height="628"
+        Width="1337"
         Background="#2B2B2B"
         Foreground="White">
 
@@ -67,7 +67,7 @@
                 <Label Grid.Column="4" Content="Ár:" VerticalAlignment="Center"/>
                 <TextBox Grid.Column="5" Margin="5"/>
 
-                <Button Grid.Column="6" Content="Hozzáadás" Margin="13,-2,103,2" Width="90"/>
+                <Button x:Name="Hozzáadás_gomb" Grid.Column="6" Content="Hozzáadás" Margin="13,-2,103,2" Width="90" Click="Hozzáadás_gomb_Click"/>
                 <Button Grid.Column="6" Content="Táblázat&#xD;&#xA;" HorizontalAlignment="Left" Margin="119,0,0,0" VerticalAlignment="Center" Height="166" Width="87"/>
             </Grid>
         </GroupBox>
