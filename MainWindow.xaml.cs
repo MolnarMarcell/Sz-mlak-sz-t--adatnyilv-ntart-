@@ -16,9 +16,21 @@ namespace Számlakészítő_adatnyilvántartó
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Termek_osztaly> Termékek = new List<Termek_osztaly>();
+        
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void Hozzáadás(object sender, RoutedEventArgs e)
+        {
+            int ID = Termékek.Count() + 1;
+            string Név = TermékNév_TextBox.Text;
+            string Kategória = Kategória_ComboBox.Text;
+            int Ár = int.Parse(Ár_TextBox.Text);
+            Termek_osztaly termék = new Termek_osztaly(ID, Név, Kategória, Ár, 0);
+            Termékek.Add(termék);
+
         }
     }
 }

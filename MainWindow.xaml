@@ -16,7 +16,7 @@
 
         <!-- ADATNYILVÁNTARTÓ -->
         <GroupBox Header="Adatnyilvántartó" FontWeight="Bold" Padding="10">
-            <Grid>
+            <Grid HorizontalAlignment="Left" Width="771" Margin="-33,0,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="150"/>
@@ -28,31 +28,21 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Content="Termék neve:" VerticalAlignment="Center"/>
-                <TextBox Grid.Column="1" Margin="5"/>
+                <TextBox x:Name="TermékNév_TextBox" Grid.Column="1" Margin="5"/>
 
                 <Label Grid.Column="2" Content="Kategória:" VerticalAlignment="Center"/>
-                <ComboBox Grid.Column="3" Margin="5"/>
+                <ComboBox x:Name="Kategória_ComboBox" Grid.Column="3" Margin="5"/>
 
                 <Label Grid.Column="4" Content="Ár:" VerticalAlignment="Center"/>
-                <TextBox Grid.Column="5" Margin="5"/>
+                <TextBox x:Name="Ár_TextBox" Grid.Column="5" Margin="5"/>
 
-                <Button Grid.Column="6" Content="Hozzáadás" Margin="13,-2,103,2" Width="90"/>
-                <Button Grid.Column="6" Content="Táblázat&#xD;&#xA;" HorizontalAlignment="Left" Margin="119,0,0,0" VerticalAlignment="Center" Height="166" Width="87"/>
+                <Button x:Name="Hozzáadás_Gomb" Grid.Column="6" Content="Hozzáadás" Margin="13,-2,103,2" Width="90" Click="Hozzáadás"/>
+                <Button x:Name="Tábla_Gomb" Grid.Column="6" Content="Táblázat" HorizontalAlignment="Left" Margin="103,35,0,0" VerticalAlignment="Top" Height="166" Width="87"/>
             </Grid>
         </GroupBox>
 
         <!-- SZÁMLAKÉSZÍTŐ -->
-        <GroupBox Grid.Row="1" Header="Számlakészítő" FontWeight="Bold" Padding="10" Margin="0,15,0,0">
-            <StackPanel Width="300">
-                <Label Content="Megrendelő neve"/>
-                <TextBox Margin="0,5"/>
-
-                <Label Content="Email"/>
-                <TextBox Margin="0,5"/>
-
-                <Button Content="Számla készítése" Height="21" Margin="0,15,0,0" Width="294"/>
-            </StackPanel>
-        </GroupBox>
+        <GroupBox Grid.Row="1" Header="Számlakészítő" FontWeight="Bold" Padding="10" Margin="0,15,0,0"/>
     </Grid>
 
 </Window>
