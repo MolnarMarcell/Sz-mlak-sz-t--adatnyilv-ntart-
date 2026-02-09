@@ -5,8 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Számlakészítő_adatnyilvántartó"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        ResizeMode="NoResize"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Title="Főablak- Adatnyilvántartó" Height="450" Width="800">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
 
+        <!-- ADATNYILVÁNTARTÓ -->
+        <GroupBox Header="Adatnyilvántartó" FontWeight="Bold" Padding="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Termék neve:" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="1" Margin="5"/>
+
+                <Label Grid.Column="2" Content="Kategória:" VerticalAlignment="Center"/>
+                <ComboBox Grid.Column="3" Margin="5"/>
+
+                <Label Grid.Column="4" Content="Ár:" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="5" Margin="5"/>
+
+                <Button Grid.Column="6" Content="Hozzáadás" Margin="13,-2,103,2" Width="90"/>
+                <Button Grid.Column="6" Content="Táblázat&#xD;&#xA;" HorizontalAlignment="Left" Margin="119,0,0,0" VerticalAlignment="Center" Height="166" Width="87"/>
+            </Grid>
+        </GroupBox>
+
+        <!-- SZÁMLAKÉSZÍTŐ -->
+        <GroupBox Grid.Row="1" Header="Számlakészítő" FontWeight="Bold" Padding="10" Margin="0,15,0,0">
+            <StackPanel Width="300">
+                <Label Content="Megrendelő neve"/>
+                <TextBox Margin="0,5"/>
+
+                <Label Content="Email"/>
+                <TextBox Margin="0,5"/>
+
+                <Button Content="Számla készítése" Height="21" Margin="0,15,0,0" Width="294"/>
+            </StackPanel>
+        </GroupBox>
     </Grid>
+
 </Window>
