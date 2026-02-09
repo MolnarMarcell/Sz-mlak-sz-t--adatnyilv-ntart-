@@ -78,11 +78,6 @@
                 Content="Hozzáadás"
                 Click="Add_Click"
                 Margin="6,0"/>
-
-                <Button Grid.Column="9"
-                Content="Táblázat megnyitása"
-                Click="OpenTable_Click"
-                Margin="6,0"/>
             </Grid>
         </GroupBox>
 
