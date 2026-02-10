@@ -63,7 +63,7 @@
                 <TextBox x:Name="TermékNév_TextBox" Grid.Column="1" Margin="5"/>
 
                 <Label Grid.Column="2" Content="Kategória:" VerticalAlignment="Center"/>
-                <ComboBox x:Name="cbKat" Grid.Column="3" Margin="6,0">
+                <ComboBox x:Name="Kategória_ComboBox" Grid.Column="3" Margin="6,0">
                     <ComboBoxItem Content="Étel"/>
                     <ComboBoxItem Content="Ital"/>
                     <ComboBoxItem Content="Bútor"/>
@@ -78,7 +78,7 @@
 
                 <Button x:Name="Hozzáadás_gomb" Grid.Column="8"
                 Content="Hozzáadás"
-                Click="Add_Click"
+                Click="Hozzáadás_gomb_Click"
                 Margin="6,0,127,0" Grid.ColumnSpan="2" BorderBrush="#FF131313" Foreground="black"/>
             </Grid>
         </GroupBox>
@@ -96,8 +96,8 @@
         </GroupBox>
         <Button Content="NYILVÁNTARTÓ TÁBLÁZAT"
         HorizontalAlignment="Left"
-        Margin="386,11,0,0"
-        VerticalAlignment="Top"
+        Margin="598,0,0,0"
+        VerticalAlignment="Center"
         Grid.Row="1"
         Width="474"
         BorderBrush="Black"

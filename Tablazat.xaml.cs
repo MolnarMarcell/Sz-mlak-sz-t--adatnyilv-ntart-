@@ -19,6 +19,15 @@ namespace Számlakészítő_adatnyilvántartó
     /// </summary>
     public partial class Tablazat : Window
     {
+        public void Betölt(List<Termek_osztaly> Termék)
+        {
+            dgAdatok.Items.Clear();
+            foreach (var item in Termék)
+            {
+                dgAdatok.Items.Add(item);
+            }
+        }
+
         public Tablazat()
         {
             InitializeComponent();

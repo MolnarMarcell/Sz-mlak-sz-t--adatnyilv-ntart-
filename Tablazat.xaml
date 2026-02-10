@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="Tablazat" Height="400" Width="700">
     <Grid>
-        <DataGrid x:Name="dgAdatok" AutoGenerateColumns="True"/>
+        <DataGrid x:Name="dgAdatok"
+          AutoGenerateColumns="True"
+          IsReadOnly="True"
+          FontSize="16"
+          RowHeight="35"
+          HeadersVisibility="All"
+          GridLinesVisibility="All"
+          AlternatingRowBackground="LightGray"
+          Margin="10" Background="White" Foreground="Black"/>
+
+
     </Grid>
 </Window>

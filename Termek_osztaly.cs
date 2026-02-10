@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Számlakészítő_adatnyilvántartó
 {
-    internal class Termek_osztaly
+    public class Termek_osztaly
     {
-        public int ID;
-        public string Név;
-        public string Kategória;
-        public int Ár;
-        public int Darab; 
+        public int ID { get; set; }
+        public string Név { get; set; }
+        public string Kategória { get; set; }
+        public int Ár { get; set; }
+        public int Darab { get; set; }
+
         public Termek_osztaly(int ID, string Név, string Kategória, int Ár, int Darab)
         {
             ID = ID;
