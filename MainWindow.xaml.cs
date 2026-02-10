@@ -27,12 +27,12 @@ namespace Számlakészítő_adatnyilvántartó
             InitializeComponent();
 
         }
-        private void Hozzáadás_gomb_Click(object sender, RoutedEventArgs e)
+        private void Add_Click(object sender, RoutedEventArgs e)
         {
             
             int ID = Termékek.Count() + 1;
             string Név = TermékNév_TextBox.Text;
-            string Kategória = Kategória_ComboBox.Text;
+            string Kategória = cbKat.Text;
             int Ár = int.Parse(Ár_TextBox.Text);
             int Darab = int.Parse(Darab_TextBox.Text);
             Termek_osztaly termék = new Termek_osztaly(ID, Név, Kategória, Ár, Darab);
