@@ -44,8 +44,6 @@ namespace Számlakészítő_adatnyilvántartó
 
         private void OpenTable_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(Termékek.Count().ToString());
-            MessageBox.Show(Termékek[0].Név);
             Tablazat tabla = new Tablazat();
             tabla.Betölt(Termékek);
             tabla.Show();

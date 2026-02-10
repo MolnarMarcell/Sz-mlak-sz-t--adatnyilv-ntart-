@@ -14,13 +14,13 @@ namespace Számlakészítő_adatnyilvántartó
         public int Ár { get; set; }
         public int Darab { get; set; }
 
-        public Termek_osztaly(int ID, string Név, string Kategória, int Ár, int Darab)
+        public Termek_osztaly(int id, string nev, string kategoria, int ar, int darab)
         {
-            ID = ID;
-            Név = Név;
-            Kategória = Kategória;
-            Ár = Ár;
-            Darab = Darab;
+            ID = id;
+            Név = nev;
+            Kategória = kategoria;
+            Ár = ar;
+            Darab = darab;
         }
     }
     

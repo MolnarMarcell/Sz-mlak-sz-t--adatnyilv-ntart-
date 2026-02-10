@@ -22,10 +22,9 @@ namespace Számlakészítő_adatnyilvántartó
         public void Betölt(List<Termek_osztaly> Termék)
         {
             dgAdatok.Items.Clear();
-            foreach (var item in Termék)
-            {
-                dgAdatok.Items.Add(item);
-            }
+            dgAdatok.ItemsSource = Termék;
+
+
         }
 
         public Tablazat()
