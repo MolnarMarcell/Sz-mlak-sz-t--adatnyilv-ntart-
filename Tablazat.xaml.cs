@@ -5,9 +5,12 @@ namespace Számlakészítő_adatnyilvántartó
 {
     public partial class Tablazat : Window
     {
-        public Tablazat()
+        public void Betölt(List<Termek_osztaly> Termék)
         {
-            InitializeComponent();
+            dgAdatok.Items.Clear();
+            dgAdatok.ItemsSource = Termék;
+
+
         }
 
         public void Betölt(List<Termek_osztaly> Termék)
