@@ -59,35 +59,36 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Content="Termék neve:" VerticalAlignment="Center"/>
-                <TextBox Grid.Column="1" Margin="5"/>
+                <TextBox x:Name="TermékNév_TextBox" Grid.Column="1" Margin="5"/>
 
                 <Label Grid.Column="2" Content="Kategória:" VerticalAlignment="Center"/>
-                <ComboBox Grid.Column="3" Margin="5"/>
+                <ComboBox x:Name="Kategória_ComboBox" Grid.Column="3" Margin="10,4,10,10" Foreground="#FFDCAEAE" Height="26">
+                    <ComboBox.Background>
+                        <LinearGradientBrush EndPoint="0,1">
+                            <GradientStop Color="#FFF0F0F0"/>
+                            <GradientStop Color="Black" Offset="1"/>
+                        </LinearGradientBrush>
+                    </ComboBox.Background>
+                    <ComboBoxItem Content="Gyümölcs"/>
+                    <ComboBoxItem Content="Tejtermék"/>
+                </ComboBox>
 
                 <Label Grid.Column="4" Content="Ár:" VerticalAlignment="Center"/>
-                <TextBox Grid.Column="5" Margin="5"/>
+                <TextBox x:Name="Ár_TextBox" Grid.Column="5" Margin="5"/>
 
                 <Label Grid.Column="6" Content="Db:" VerticalAlignment="Center"/>
-                <TextBox x:Name="tbDb" Grid.Column="7" Margin="6,0"/>
+                <TextBox x:Name="Darab_TextBox" Grid.Column="7" Margin="6,0"/>
 
-                <Button Grid.Column="8"
+                <Button x:Name="Hozzáadás_gomb" Grid.Column="8"
                 Content="Hozzáadás"
-                Click="Add_Click"
-                Margin="6,0"/>
+                Margin="6,0" Click="Hozzáadás_gomb_Click"/>
+                <Label Grid.Column="9" Content="Label" HorizontalAlignment="Left" Margin="165,15,0,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
 
         <!-- SZÁMLAKÉSZÍTŐ -->
         <GroupBox Grid.Row="1" Header="Számlakészítő" FontWeight="Bold" Padding="10" Margin="0,15,0,0">
-            <StackPanel Width="300">
-                <Label Content="Megrendelő neve"/>
-                <TextBox Margin="0,5"/>
-
-                <Label Content="Email"/>
-                <TextBox Margin="0,5"/>
-
-                <Button Content="Számla készítése" Height="21" Margin="0,15,0,0" Width="294"/>
-            </StackPanel>
+            <Label x:Name="Bugged" Content="Label" HorizontalAlignment="Left" Margin="1035,0,0,0" VerticalAlignment="Top"/>
         </GroupBox>
     </Grid>
 </Window>
