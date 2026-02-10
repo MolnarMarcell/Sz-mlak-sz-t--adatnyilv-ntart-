@@ -5,7 +5,8 @@
         Height="420"
         Width="900"
         Background="#2B2B2B"
-        Foreground="White">
+        Foreground="White"
+        ResizeMode="NoResize">
 
     <Window.Resources>
 
@@ -35,7 +36,7 @@
 
     </Window.Resources>
 
-    <Grid Margin="20">
+    <Grid Margin="20,20,11,20">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -43,7 +44,7 @@
         </Grid.RowDefinitions>
 
         <!-- ADATNYILVÁNTARTÓ -->
-        <GroupBox Header="Adatnyilvántartó" Padding="15" Margin="0,0,0,15">
+        <GroupBox Header="Adatnyilvántartó" Padding="15" Margin="0,0,0,15" BorderBrush="Black">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -63,9 +64,10 @@
 
                 <Label Grid.Column="2" Content="Kategória:" VerticalAlignment="Center"/>
                 <ComboBox x:Name="cbKat" Grid.Column="3" Margin="6,0">
-                    <ComboBoxItem Content="Élelmiszer"/>
+                    <ComboBoxItem Content="Étel"/>
+                    <ComboBoxItem Content="Ital"/>
+                    <ComboBoxItem Content="Bútor"/>
                     <ComboBoxItem Content="Elektronika"/>
-                    <ComboBoxItem Content="Egyéb"/>
                 </ComboBox>
 
                 <Label Grid.Column="4" Content="Ár:" VerticalAlignment="Center"/>
@@ -77,22 +79,35 @@
                 <Button Grid.Column="8"
                 Content="Hozzáadás"
                 Click="Add_Click"
-                Margin="6,0"/>
+                Margin="6,0,127,0" Grid.ColumnSpan="2" BorderBrush="#FF131313" Foreground="black"/>
             </Grid>
         </GroupBox>
 
         <!-- SZÁMLAKÉSZÍTŐ -->
-        <GroupBox Grid.Row="1" Header="Számlakészítő" Padding="15">
+        <GroupBox Grid.Row="1" Header="Számlakészítő" Padding="15" BorderBrush="Black" Foreground="White" Margin="0,0,505,0">
             <StackPanel Width="320">
                 <Label Content="Megrendelő neve"/>
                 <TextBox x:Name="tbRendelo" Margin="0,5"/>
 
                 <Label Content="Email"/>
                 <TextBox x:Name="tbEmail" Margin="0,5"/>
-
-                <Button Content="Számla készítése" Margin="0,15,0,0"/>
+                <Button Content="Számla készítése" Foreground="black" Height="35" Width="321"/>
             </StackPanel>
         </GroupBox>
+        <Button Content="NYILVÁNTARTÓ TÁBLÁZAT"
+        HorizontalAlignment="Left"
+        Margin="386,11,0,0"
+        VerticalAlignment="Top"
+        Grid.Row="1"
+        Width="474"
+        BorderBrush="Black"
+        Foreground="Black"
+        Height="224"
+        FontFamily="Trebuchet MS"
+        FontSize="24"
+        FontStyle="Italic"
+        Click="OpenTable_Click"/>
+
 
     </Grid>
 </Window>

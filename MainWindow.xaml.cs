@@ -25,5 +25,12 @@ namespace Számlakészítő_adatnyilvántartó
         {
 
         }
+
+        private void OpenTable_Click(object sender, RoutedEventArgs e)
+        {
+            Tablazat tabla = new Tablazat();
+            tabla.Show();
+        }
+
     }
 }
