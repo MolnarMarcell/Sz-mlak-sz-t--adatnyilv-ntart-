@@ -35,14 +35,19 @@ namespace Számlakészítő_adatnyilvántartó
             string Kategória = Kategória_ComboBox.Text;
             int Ár = int.Parse(Ár_TextBox.Text);
             int Darab = int.Parse(Darab_TextBox.Text);
-            Termek_osztaly termék = new Termek_osztaly(ID, Név, Kategória, Ár, Darab);
-            Termékek.Add(termék);
+            //Termek_osztaly termék = new Termek_osztaly(ID, Név, Kategória, Ár, Darab);
+            //Termékek.Add(termék);
+            Termékek.Add(new Termek_osztaly(ID, Név, Kategória, Ár, Darab));
+
 
         }
 
         private void OpenTable_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show(Termékek.Count().ToString());
+            MessageBox.Show(Termékek[0].Név);
             Tablazat tabla = new Tablazat();
+            tabla.Betölt(Termékek);
             tabla.Show();
         }
 

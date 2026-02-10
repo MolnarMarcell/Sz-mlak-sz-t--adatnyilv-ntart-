@@ -8,7 +8,8 @@ namespace Számlakészítő_adatnyilvántartó
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
-    { 
+    {
+        List<Termek_osztaly> Termékek = new List<Termek_osztaly>();
     }
 
 }
