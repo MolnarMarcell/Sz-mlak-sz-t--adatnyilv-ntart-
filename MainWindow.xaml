@@ -2,8 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Főablak - Adatnyilvántartó"
-        Height="420"
-        Width="900"
+        Height="628"
+        Width="1337"
         Background="#2B2B2B"
         Foreground="White"
         ResizeMode="NoResize">
@@ -59,8 +59,8 @@
                     <ColumnDefinition Width="140"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0" Content="Termék neve:" VerticalAlignment="Center"/>
-                <TextBox x:Name="tbNev" Grid.Column="1" Margin="6,0"/>
+                <Label Content="Termék neve:" VerticalAlignment="Center"/>
+                <TextBox x:Name="TermékNév_TextBox" Grid.Column="1" Margin="5"/>
 
                 <Label Grid.Column="2" Content="Kategória:" VerticalAlignment="Center"/>
                 <ComboBox x:Name="cbKat" Grid.Column="3" Margin="6,0">
@@ -71,12 +71,12 @@
                 </ComboBox>
 
                 <Label Grid.Column="4" Content="Ár:" VerticalAlignment="Center"/>
-                <TextBox x:Name="tbAr" Grid.Column="5" Margin="6,0"/>
+                <TextBox x:Name="Ár_TextBox" Grid.Column="5" Margin="5"/>
 
                 <Label Grid.Column="6" Content="Db:" VerticalAlignment="Center"/>
-                <TextBox x:Name="tbDb" Grid.Column="7" Margin="6,0"/>
+                <TextBox x:Name="Darab_TextBox" Grid.Column="7" Margin="6,0"/>
 
-                <Button Grid.Column="8"
+                <Button x:Name="Hozzáadás_gomb" Grid.Column="8"
                 Content="Hozzáadás"
                 Click="Add_Click"
                 Margin="6,0,127,0" Grid.ColumnSpan="2" BorderBrush="#FF131313" Foreground="black"/>
