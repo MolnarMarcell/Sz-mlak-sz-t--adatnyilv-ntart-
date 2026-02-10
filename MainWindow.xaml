@@ -78,7 +78,7 @@
 
                 <Button x:Name="Hozzáadás_gomb" Grid.Column="8"
                 Content="Hozzáadás"
-                Click="Hozzáadás_gomb_Click"
+                Click="Hozzáadás_gomb_click"
                 Margin="6,0,127,0" Grid.ColumnSpan="2" BorderBrush="#FF131313" Foreground="black"/>
             </Grid>
         </GroupBox>
@@ -96,8 +96,8 @@
         </GroupBox>
         <Button Content="NYILVÁNTARTÓ TÁBLÁZAT"
         HorizontalAlignment="Left"
-        Margin="598,0,0,0"
-        VerticalAlignment="Center"
+        Margin="382,1,0,0"
+        VerticalAlignment="Top"
         Grid.Row="1"
         Width="474"
         BorderBrush="Black"
