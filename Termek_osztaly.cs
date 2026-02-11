@@ -10,17 +10,17 @@ namespace Számlakészítő_adatnyilvántartó
     public class Termek_osztaly
     {
         public int ID;
-        public string Név;
-        public string Kategória;
-        public int Ár;
+        public string Nev;
+        public string Kategoria;
+        public int Ar;
         public int Darab;
 
         public Termek_osztaly(int id, string nev, string kategoria, int ar, int darab)
         {
             ID = id;
-            Név = nev;
-            Kategória = kategoria;
-            Ár = ar;
+            Nev = nev;
+            Kategoria = kategoria;
+            Ar = ar;
             Darab = darab;
         }
     }

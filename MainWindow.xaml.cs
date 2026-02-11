@@ -7,7 +7,6 @@ namespace Számlakészítő_adatnyilvántartó
     public partial class MainWindow : Window
     {
         List<Termek_osztaly> Termékek = new List<Termek_osztaly>();
-
         public MainWindow()
         {
             InitializeComponent();
