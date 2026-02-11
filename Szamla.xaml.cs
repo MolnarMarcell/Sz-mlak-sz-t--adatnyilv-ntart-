@@ -19,9 +19,20 @@ namespace Számlakészítő_adatnyilvántartó
     /// </summary>
     public partial class Szamla : Window
     {
-        public Szamla()
+        List<Termek_osztaly> Termekek;
+
+        public Szamla(List<Termek_osztaly> termekek)
         {
             InitializeComponent();
+            Termekek = termekek;
+            SzamlaDataGrid.ItemsSource = Termekek;
+            Osszesit();
+        }
+
+        private void Osszesit()
+        {
+            int osszesen = Termekek.Sum(t => t.Ar * t.Darab);
+            Osszesen_Text.Text = osszesen + " Ft";
         }
     }
 }
