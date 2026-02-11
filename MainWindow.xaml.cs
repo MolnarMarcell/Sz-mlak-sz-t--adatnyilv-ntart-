@@ -24,8 +24,9 @@ namespace Számlakészítő_adatnyilvántartó
             int ID = Termékek.Count + 1;
             string Név = TermékNév_TextBox.Text;
 
-            string Kategória =
-                ((ComboBoxItem)Kategória_ComboBox.SelectedItem).Content.ToString();
+            string Kategória = Kategória_ComboBox.Text;
+
+
 
             int Ár = int.Parse(Ár_TextBox.Text);
             int Darab = int.Parse(Darab_TextBox.Text);

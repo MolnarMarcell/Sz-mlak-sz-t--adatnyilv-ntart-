@@ -7,16 +7,16 @@ namespace Számlakészítő_adatnyilvántartó
     {
         public void Betölt(List<Termek_osztaly> Termék)
         {
-            dgAdatok.Items.Clear();
+            MessageBox.Show(Termék[0].ID + Termék[0].Név + Termék[0].Kategória + Termék[0].Ár + Termék[0].Darab);
+            dgAdatok.ItemsSource = null;
             dgAdatok.ItemsSource = Termék;
 
 
         }
 
-        public void Betölt(List<Termek_osztaly> Termék)
+        public Tablazat()
         {
-            dgAdatok.Items.Clear();
-            dgAdatok.ItemsSource = Termék;
+            InitializeComponent();
         }
     }
 }

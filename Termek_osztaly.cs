@@ -9,11 +9,11 @@ namespace Számlakészítő_adatnyilvántartó
 {
     public class Termek_osztaly
     {
-        public int id;
-        public string nev;
-        public string kategoria;
-        public int ar;
-        public int db;
+        public int ID;
+        public string Név;
+        public string Kategória;
+        public int Ár;
+        public int Darab;
 
         public Termek_osztaly(int id, string nev, string kategoria, int ar, int darab)
         {
