@@ -5,8 +5,8 @@
 
     <Grid>
         <DataGrid x:Name="dgAdatok"
-                  AutoGenerateColumns="True"
                   IsReadOnly="True"
+                  AutoGenerateColumns="True"
                   FontSize="16"
                   RowHeight="35"
                   HeadersVisibility="All"
@@ -15,5 +15,6 @@
                   Margin="10"
                   Background="White"
                   Foreground="Black"/>
+
     </Grid>
 </Window>
