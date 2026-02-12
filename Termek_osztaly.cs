@@ -9,20 +9,19 @@ namespace Számlakészítő_adatnyilvántartó
 {
     public class Termek_osztaly
     {
-        public int ID;
-        public string Nev;
-        public string Kategoria;
-        public int Ar;
-        public int Darab;
+        public int ID { get; set; }
+        public string Nev { get; set; }
+        public string Kategoria { get; set; }
+        public int Ar { get; set; }
+        public int Keszlet { get; set; }
 
-        public Termek_osztaly(int id, string nev, string kategoria, int ar, int darab)
+        public Termek_osztaly(int id, string nev, string kategoria, int ar, int keszlet)
         {
             ID = id;
             Nev = nev;
             Kategoria = kategoria;
             Ar = ar;
-            Darab = darab;
+            Keszlet = keszlet;
         }
     }
-    
 }

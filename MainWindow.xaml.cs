@@ -1,12 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
 
 namespace Számlakészítő_adatnyilvántartó
 {
     public partial class MainWindow : Window
     {
-        List<Termek_osztaly> Termékek = new List<Termek_osztaly>();
         public MainWindow()
         {
             InitializeComponent();
@@ -20,35 +17,39 @@ namespace Számlakészítő_adatnyilvántartó
                 return;
             }
 
-            int ID = Termékek.Count + 1;
-            string Név = TermékNév_TextBox.Text;
+            if (!int.TryParse(Ár_TextBox.Text, out int Ár) ||
+                !int.TryParse(Darab_TextBox.Text, out int Darab))
+            {
+                MessageBox.Show("Hibás szám!");
+                return;
+            }
 
+            int ID = App.Termékek.Count + 1;
+            string Név = TermékNév_TextBox.Text;
             string Kategória = Kategória_ComboBox.Text;
 
+            App.Termékek.Add(new Termek_osztaly(ID, Név, Kategória, Ár, Darab));
 
-
-            int Ár = int.Parse(Ár_TextBox.Text);
-            int Darab = int.Parse(Darab_TextBox.Text);
-
-            Termékek.Add(new Termek_osztaly(ID, Név, Kategória, Ár, Darab));
-
-            MessageBox.Show("Hozzáadva. Lista elemszám: " + Termékek.Count);
+            MessageBox.Show("Hozzáadva. Lista elemszám: " + App.Termékek.Count);
         }
-
 
         private void OpenTable_Click(object sender, RoutedEventArgs e)
         {
             Tablazat tabla = new Tablazat();
-            tabla.Betölt(Termékek);
+            tabla.Betölt(App.Termékek);
             tabla.Show();
-            this.Close(); 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Szamla szamlaTableau = new Szamla(Termékek);
+            if (App.Termékek.Count == 0)
+            {
+                MessageBox.Show("Nincs termék a listában!");
+                return;
+            }
+
+            Szamla szamlaTableau = new Szamla(App.Termékek);
             szamlaTableau.Show();
-            this.Close(); 
         }
     }
 }

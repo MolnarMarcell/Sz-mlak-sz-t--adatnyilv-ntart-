@@ -9,7 +9,7 @@ namespace Számlakészítő_adatnyilvántartó
     /// </summary>
     public partial class App : Application
     {
-        List<Termek_osztaly> Termékek = new List<Termek_osztaly>();
+        public static List<Termek_osztaly> Termékek = new List<Termek_osztaly>();
     }
 
 }
