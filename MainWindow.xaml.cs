@@ -41,5 +41,10 @@ namespace Számlakészítő_adatnyilvántartó
             tabla.Betölt(Termékek);
             tabla.Show();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

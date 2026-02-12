@@ -91,7 +91,7 @@
 
                 <Label Content="Email"/>
                 <TextBox x:Name="tbEmail" Margin="0,5"/>
-                <Button Content="Számla készítése" Foreground="black" Height="35" Width="321"/>
+                <Button Content="Számla készítése" Foreground="black" Height="35" Width="321" Click="Button_Click"/>
             </StackPanel>
         </GroupBox>
         <Button Content="NYILVÁNTARTÓ TÁBLÁZAT"
