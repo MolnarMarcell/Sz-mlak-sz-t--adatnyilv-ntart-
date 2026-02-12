@@ -41,11 +41,14 @@ namespace Számlakészítő_adatnyilvántartó
             Tablazat tabla = new Tablazat();
             tabla.Betölt(Termékek);
             tabla.Show();
+            this.Close(); 
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            Szamla szamlaTableau = new Szamla();
+            szamlaTableau.Show();
+            this.Close(); 
         }
     }
 }
