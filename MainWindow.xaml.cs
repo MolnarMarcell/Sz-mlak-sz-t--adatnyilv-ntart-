@@ -46,7 +46,7 @@ namespace Számlakészítő_adatnyilvántartó
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Szamla szamlaTableau = new Szamla();
+            Szamla szamlaTableau = new Szamla(Termékek);
             szamlaTableau.Show();
             this.Close(); 
         }
