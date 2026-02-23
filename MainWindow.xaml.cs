@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Linq;
 
 namespace Számlakészítő_adatnyilvántartó
 {
@@ -24,13 +25,37 @@ namespace Számlakészítő_adatnyilvántartó
                 return;
             }
 
-            int ID = App.Termékek.Count + 1;
-            string Név = TermékNév_TextBox.Text;
+            string Név = TermékNév_TextBox.Text.Trim();
             string Kategória = Kategória_ComboBox.Text;
 
-            App.Termékek.Add(new Termek_osztaly(ID, Név, Kategória, Ár, Darab));
+            if (string.IsNullOrWhiteSpace(Név))
+            {
+                MessageBox.Show("Adj meg terméknevet!");
+                return;
+            }
 
-            MessageBox.Show("Hozzáadva. Lista elemszám: " + App.Termékek.Count);
+            // 🔍 Megkeressük, hogy létezik-e már ilyen nevű termék
+            var letezoTermek = App.Termékek
+                .FirstOrDefault(t => t.Nev.Equals(Név, StringComparison.OrdinalIgnoreCase));
+
+            if (letezoTermek != null)
+            {
+                // ✔ Már létezik → készlet növelése
+                letezoTermek.Keszlet += Darab;
+
+                // (ha az ár változhat, akkor ezt is frissítheted)
+                letezoTermek.Ar = Ár;
+
+                MessageBox.Show($"A(z) {Név} már létezett, készlet növelve!\nÚj készlet: {letezoTermek.Keszlet}");
+            }
+            else
+            {
+                // ✔ Nem létezik → új termék
+                int ID = App.Termékek.Count + 1;
+                App.Termékek.Add(new Termek_osztaly(ID, Név, Kategória, Ár, Darab));
+
+                MessageBox.Show($" {Név} hozzáadva új termékként.");
+            }
         }
 
         private void OpenTable_Click(object sender, RoutedEventArgs e)

@@ -12,32 +12,11 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <GroupBox Header="Számlázás"
-                  Foreground="White"
-                  BorderBrush="#4CAF50"
-                  Margin="0 0 0 10">
-
-            <Grid Margin="10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-                <StackPanel>
-                    <TextBlock Text="Kiállító:" Foreground="White"/>
-                    <TextBox x:Name="Kiallito_TextBox"/>
-
-                    <TextBlock Text="Elérhetőség:" Margin="0 10 0 0" Foreground="White"/>
-                    <TextBox x:Name="Elerhetoseg_TextBox"/>
-                </StackPanel>
-            </Grid>
-        </GroupBox>
-
         <!-- MENNYISÉG INPUT PANEL -->
         <GroupBox Grid.Row="1"
                   Header="Termék hozzáadása"
                   Foreground="White"
-                  BorderBrush="#4CAF50"
+                  BorderBrush="white"
                   Margin="0 0 0 10">
 
             <Grid Margin="10">
@@ -158,11 +137,12 @@
         <GroupBox Grid.Row="2"
                   Header="Számla tételei"
                   Foreground="White"
-                  BorderBrush="#4CAF50"
+                  BorderBrush="white"
                   Margin="0 0 0 10">
 
             <DataGrid x:Name="SzamlaDataGrid"
                       AutoGenerateColumns="False"
+                      IsReadOnly="True"
                       Background="#2b2b2b"
                       Foreground="Black"
                       CanUserAddRows="False">
@@ -214,7 +194,7 @@
                         Padding="15 5"
                         Background="#1b5e20"
                         Foreground="White"
-                        Click="SzamlaMentes_Click"/>
+                        Click="SzamlaMentes_Click" Width="693"/>
             </DockPanel>
         </Border>
     </Grid>
