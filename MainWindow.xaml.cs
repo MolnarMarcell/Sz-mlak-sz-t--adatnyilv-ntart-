@@ -1,12 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
+using System.Linq;
 
 namespace Számlakészítő_adatnyilvántartó
 {
     public partial class MainWindow : Window
     {
-        List<Termek_osztaly> Termékek = new List<Termek_osztaly>();
         public MainWindow()
         {
             InitializeComponent();
@@ -20,27 +18,63 @@ namespace Számlakészítő_adatnyilvántartó
                 return;
             }
 
-            int ID = Termékek.Count + 1;
-            string Név = TermékNév_TextBox.Text;
+            if (!int.TryParse(Ár_TextBox.Text, out int Ár) ||
+                !int.TryParse(Darab_TextBox.Text, out int Darab))
+            {
+                MessageBox.Show("Hibás szám!");
+                return;
+            }
 
+            string Név = TermékNév_TextBox.Text.Trim();
             string Kategória = Kategória_ComboBox.Text;
 
+            if (string.IsNullOrWhiteSpace(Név))
+            {
+                MessageBox.Show("Adj meg terméknevet!");
+                return;
+            }
 
+            // 🔍 Megkeressük, hogy létezik-e már ilyen nevű termék
+            var letezoTermek = App.Termékek
+                .FirstOrDefault(t => t.Nev.Equals(Név, StringComparison.OrdinalIgnoreCase));
 
-            int Ár = int.Parse(Ár_TextBox.Text);
-            int Darab = int.Parse(Darab_TextBox.Text);
+            if (letezoTermek != null)
+            {
+                // ✔ Már létezik → készlet növelése
+                letezoTermek.Keszlet += Darab;
 
-            Termékek.Add(new Termek_osztaly(ID, Név, Kategória, Ár, Darab));
+                // (ha az ár változhat, akkor ezt is frissítheted)
+                letezoTermek.Ar = Ár;
 
-            MessageBox.Show("Hozzáadva. Lista elemszám: " + Termékek.Count);
+                MessageBox.Show($"A(z) {Név} már létezett, készlet növelve!\nÚj készlet: {letezoTermek.Keszlet}");
+            }
+            else
+            {
+                // ✔ Nem létezik → új termék
+                int ID = App.Termékek.Count + 1;
+                App.Termékek.Add(new Termek_osztaly(ID, Név, Kategória, Ár, Darab));
+
+                MessageBox.Show($" {Név} hozzáadva új termékként.");
+            }
         }
-
 
         private void OpenTable_Click(object sender, RoutedEventArgs e)
         {
             Tablazat tabla = new Tablazat();
-            tabla.Betölt(Termékek);
+            tabla.Betölt(App.Termékek);
             tabla.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (App.Termékek.Count == 0)
+            {
+                MessageBox.Show("Nincs termék a listában!");
+                return;
+            }
+
+            Szamla szamlaTableau = new Szamla(App.Termékek);
+            szamlaTableau.Show();
         }
     }
 }

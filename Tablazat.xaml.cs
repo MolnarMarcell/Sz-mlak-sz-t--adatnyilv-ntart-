@@ -12,8 +12,12 @@ namespace Számlakészítő_adatnyilvántartó
         }
         public void Betölt(List<Termek_osztaly> Termék)
         {
-            dgAdatok.Items.Clear();
+            dgAdatok.ItemsSource = null;
             dgAdatok.ItemsSource = Termék;
+        }
+        public Tablazat()
+        {
+            InitializeComponent();
         }
     }
 }

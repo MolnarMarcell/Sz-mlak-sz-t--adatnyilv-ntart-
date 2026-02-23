@@ -44,7 +44,7 @@
         </Grid.RowDefinitions>
 
         <!-- ADATNYILVÁNTARTÓ -->
-        <GroupBox Header="Adatnyilvántartó" Padding="15" Margin="0,0,0,15" BorderBrush="Black">
+        <GroupBox Header="Adatnyilvántartó" Padding="15" Margin="0,0,0,15" BorderBrush="white">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -84,14 +84,9 @@
         </GroupBox>
 
         <!-- SZÁMLAKÉSZÍTŐ -->
-        <GroupBox Grid.Row="1" Header="Számlakészítő" Padding="15" BorderBrush="Black" Foreground="White" Margin="0,0,505,0">
+        <GroupBox Grid.Row="1" Header="Számlakészítő" Padding="15" BorderBrush="white" Foreground="white" Margin="0,0,505,0">
             <StackPanel Width="320">
-                <Label Content="Megrendelő neve"/>
-                <TextBox x:Name="tbRendelo" Margin="0,5"/>
-
-                <Label Content="Email"/>
-                <TextBox x:Name="tbEmail" Margin="0,5"/>
-                <Button Content="Számla készítése" Foreground="black" Height="35" Width="321"/>
+               <Button Content="Számla készítése" Foreground="black" Height="173" Width="321" Click="Button_Click"/>
             </StackPanel>
         </GroupBox>
         <Button Content="NYILVÁNTARTÓ TÁBLÁZAT"
@@ -107,7 +102,5 @@
         FontSize="24"
         FontStyle="Italic"
         Click="OpenTable_Click"/>
-
-
     </Grid>
 </Window>
