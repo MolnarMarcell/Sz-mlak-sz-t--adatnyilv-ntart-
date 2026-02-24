@@ -10,14 +10,10 @@ namespace Számlakészítő_adatnyilvántartó
         {
             InitializeComponent();
         }
-        public void Betölt(List<Termek_osztaly> Termék)
+        public void Betölt(List<Termek_osztaly> Termék) //a termékeket betölti a DataGrid-be, hogy táblázatban meg lehessen nézni őket
         {
-            dgAdatok.ItemsSource = null;
-            dgAdatok.ItemsSource = Termék;
-        }
-        public Tablazat()
-        {
-            InitializeComponent();
+            dgAdatok.ItemsSource = null; //elöző értékékeket törli
+            dgAdatok.ItemsSource = Termék; // betölti a legfrissebb termékeket a DataGrid-be
         }
     }
 }
